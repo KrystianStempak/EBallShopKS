@@ -1,0 +1,6 @@
+@EBallShop_HostAddress = http://localhost:5211
+
+GET {{EBallShop_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
