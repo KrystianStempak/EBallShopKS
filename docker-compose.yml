@@ -4,22 +4,3 @@ services:
     build:
       context: .
       dockerfile: EBallShop/Dockerfile
-
-  db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    environment:
-      SA_PASSWORD: "${SA_PASSWORD}"
-      ACCEPT_EULA: "Y"
-    ports:
-      - "1433:1433"
-    volumes:
-      - mssql_data:/var/opt/mssql
-    networks:
-      - back-tier  
-
-volumes:
-  mssql_data:
-
-networks:
-  front-tier:
-  back-tier:
