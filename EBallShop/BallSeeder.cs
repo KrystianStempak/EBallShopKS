@@ -25,11 +25,11 @@ namespace EBallShop
         {
             var football = new Category()
             {
-                CategoryName = "Footaball"
+                Name = "Football"
             };
             var basketball = new Category()
             {
-                CategoryName = "Basketball"
+                Name = "Basketball"
             };
             var balls = new List<Ball>()
             {

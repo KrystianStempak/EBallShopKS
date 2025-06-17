@@ -7,6 +7,12 @@ namespace EBallShop.Models
         public DbSet<Ball> Balls { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>()
+                .HasIndex(c => c.Name)
+                .IsUnique(); // To tworzy unikalny indeks
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // Połączenie z bazą danych

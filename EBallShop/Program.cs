@@ -1,5 +1,8 @@
-
+using AutoMapper;
 using EBallShop.Models;
+using EBallShop.Services;
+using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
 
 namespace EBallShop
 {
@@ -17,6 +20,9 @@ namespace EBallShop
 
             builder.Services.AddDbContext<BallDbContext>();
             builder.Services.AddScoped<IBallSeeder, BallSeeder>();
+            builder.Services.AddAutoMapper(typeof(Program).Assembly);
+            builder.Services.AddScoped<IBallService, BallService>();   
+            
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -42,5 +48,6 @@ namespace EBallShop
 
             app.Run();
         }
+
     }
 }
