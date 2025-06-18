@@ -19,12 +19,13 @@ namespace EBallShop.Services
     {
         private readonly BallDbContext _dbContext;
         private readonly IMapper _mapper;
+        private readonly ILogger<BallService> _logger;
 
-        public BallService(BallDbContext dbContext, IMapper mapper)
+        public BallService(BallDbContext dbContext, IMapper mapper, ILogger<BallService> logger)
         {
             _dbContext = dbContext;
             _mapper = mapper;
-
+            _logger = logger;
         }
 
         public bool Update(int id, UpdateBallDto dto)
@@ -46,6 +47,7 @@ namespace EBallShop.Services
 
         public bool Delete(int id)
         {
+
             var ball = _dbContext
                 .Balls
                 .FirstOrDefault(b => b.Id == id);

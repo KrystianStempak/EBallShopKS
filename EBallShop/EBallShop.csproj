@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="nlog.config" />
+    <None Include="nlog.config" />
   </ItemGroup>
 
   <ItemGroup>
