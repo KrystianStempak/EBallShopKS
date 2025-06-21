@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using EBallShop.Models;
-using EBallShop.ModelsDto;
-using EBallShop.ModlesDto;
-using EBallShop.Services;
+using EShop.Application.Services;
+using EShop.Domain.Models;
+using EShop.Domain.ModelsDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +24,7 @@ namespace EBallShop.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public ActionResult Update([FromBody] UpdateBallDto dto, [FromRoute]int id)
         {
             var ballOld = _ballService.GetById(id);
@@ -48,17 +49,17 @@ namespace EBallShop.Controllers
             return Ok();
         }
 
-        [HttpDelete(("{id}"))]
+        [HttpDelete("{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public ActionResult Delete([FromRoute] int id)
         {
             var ball = _ballService.GetById(id);
-
-            _logger.LogInformation($"Deleting ball with ID = {id}, name = {ball.Name}, size = {ball.Size}, decryption = {ball.Description}");
 
             var isDeleted = _ballService.Delete(id);
 
             if (isDeleted)
             {
+                _logger.LogInformation($"Deleting ball with ID = {id}, name = {ball.Name}, size = {ball.Size}, decryption = {ball.Description}");
                 return NoContent();
             }
 
@@ -67,6 +68,7 @@ namespace EBallShop.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "AdminOnly")]
         public ActionResult CreateBall([FromBody] CreateBallDto dto)
         {
             var id = _ballService.Create(dto);

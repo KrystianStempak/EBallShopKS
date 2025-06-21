@@ -1,0 +1,7 @@
+2025-06-21 19:02:07.3611 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-21 19:02:07.8801 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-21 19:02:08.0908 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-21 19:02:08.0998 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-21 19:02:08.1151 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-21 19:02:08.4765 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-21 19:02:08.5062 Info Configuration initialized.
