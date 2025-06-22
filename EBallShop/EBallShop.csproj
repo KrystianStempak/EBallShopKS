@@ -40,8 +40,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Eshop.Application\Eshop.Application.csproj" />
-    <ProjectReference Include="..\..\EShop.Domain\EShop.Domain.csproj" />
+	  <ProjectReference Include="..\Eshop.Application\Eshop.Application.csproj" />
+	  <ProjectReference Include="..\EShop.Domain\EShop.Domain.csproj" />
   </ItemGroup>
 
 </Project>

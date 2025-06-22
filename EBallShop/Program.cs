@@ -1,5 +1,4 @@
 using AutoMapper;
-using EShop.Application.Services;
 using EShop.Domain;
 using EShop.Domain.Models;
 using EShop.Domain.Seeders;
@@ -11,6 +10,7 @@ using NLog;
 using NLog.Web;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using EShop.Application.Services;
 
 namespace EBallShop
 {
@@ -80,7 +80,7 @@ namespace EBallShop
                 .AddJwtBearer(options =>
                 {
                     var rsa = RSA.Create();
-                    rsa.ImportFromPem(File.ReadAllText("../../data/public.key"));
+                    rsa.ImportFromPem(File.ReadAllText("../data/public.key"));
                     var publicKey = new RsaSecurityKey(rsa);
 
                     options.TokenValidationParameters = new TokenValidationParameters
