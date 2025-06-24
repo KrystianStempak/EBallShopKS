@@ -11,6 +11,7 @@ using NLog.Web;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using EShop.Application.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace EBallShop
 {
@@ -67,7 +68,8 @@ namespace EBallShop
                         });
                                 });
 
-                builder.Services.AddDbContext<BallDbContext>();
+                builder.Services.AddDbContext<BallDbContext>(options =>
+                    options.UseInMemoryDatabase("EBallShopDb"));
                 builder.Services.AddScoped<IBallSeeder, BallSeeder>();
                 builder.Services.AddAutoMapper(typeof(BallMappingProfile).Assembly);
                 builder.Services.AddScoped<IBallService, BallService>();

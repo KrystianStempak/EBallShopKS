@@ -7,10 +7,16 @@ using UserService.Controllers;
 using System.Security.Cryptography;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using User.Domain.Profiles;
+using Microsoft.AspNetCore.Identity;
+using User.Domain.Models.Entities;
+using User.Domain.Seeders;
+using EShop.Domain.Seeders;
+using EShop.Domain.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<EShop.Domain.Repositories.DataContext>(x => x.UseInMemoryDatabase("TestDb"), ServiceLifetime.Transient);
+builder.Services.AddDbContext<User.Domain.Repositories.DataContext>(x => x.UseInMemoryDatabase("TestDb"), ServiceLifetime.Transient);
 
 // JWT config
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -24,7 +30,7 @@ builder.Services.AddAuthentication(options =>
 .AddJwtBearer(options =>
 {
     var rsa = RSA.Create();
-    rsa.ImportFromPem(File.ReadAllText("../data/public.key"));// Za³aduj klucz publiczny RSA
+    rsa.ImportFromPem(File.ReadAllText("/data/public.key"));// Za³aduj klucz publiczny RSA
     var publicKey = new RsaSecurityKey(rsa);
 
     var jwtConfig = jwtSettings.Get<JwtSettings>();
@@ -46,9 +52,17 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("Administrator"));
 });
 
+builder.Services.AddDbContext<UserDbContext>(options =>
+                    options.UseInMemoryDatabase("UserDb"));
+
+builder.Services.AddScoped<IUserDbSeeder, UserDbSeeder>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+builder.Services.AddScoped<IUserService, User.Application.Services.UserService>();
 
+builder.Services.AddScoped<IPasswordHasher<User.Domain.Models.Entities.User>, PasswordHasher<User.Domain.Models.Entities.User>>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -87,6 +101,12 @@ builder.Services.AddSwaggerGen(c =>
         });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<IUserDbSeeder>();
+    seeder.Seed();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

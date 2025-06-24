@@ -1,6 +1,39 @@
+version: '3.8'
+
 services:
   eballshop:
-    image: ${DOCKER_REGISTRY-}eballshop
     build:
       context: .
       dockerfile: EBallShop/Dockerfile
+    ports:
+      - "5001:8080"
+    networks:
+      - backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  userservice:
+    build:
+      context: .
+      dockerfile: UserService/Dockerfile
+    ports:
+      - "5002:8080"
+    networks:
+      - backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  shoppingcart:
+    build:
+      context: .
+      dockerfile: ShoppingCart/Dockerfile
+    ports:
+      - "5003:8080"
+    networks:
+      - backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+networks:
+  backend:
+    driver: bridge

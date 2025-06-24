@@ -1,6 +1,6 @@
-# Zobacz https://aka.ms/customizecontainer, aby dowiedzieć się, jak dostosować kontener debugowania i jak program Visual Studio używa tego pliku Dockerfile do kompilowania obrazów w celu szybszego debugowania.
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-# Ten etap jest używany podczas uruchamiania z programu VS w trybie szybkim (domyślnie dla konfiguracji debugowania)
+# This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
@@ -8,22 +8,24 @@ EXPOSE 8080
 EXPOSE 8081
 
 
-# Ten etap służy do kompilowania projektu usługi
+# This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["EBallShop/EBallShop.csproj", "EBallShop/"]
+COPY ["Eshop.Application/Eshop.Application.csproj", "Eshop.Application/"]
+COPY ["EShop.Domain/EShop.Domain.csproj", "EShop.Domain/"]
 RUN dotnet restore "./EBallShop/EBallShop.csproj"
 COPY . .
 WORKDIR "/src/EBallShop"
 RUN dotnet build "./EBallShop.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Ten etap służy do publikowania projektu usługi do skopiowania do etapu końcowego
+# This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./EBallShop.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# Ten etap jest używany w środowisku produkcyjnym lub w przypadku uruchamiania z programu VS w trybie regularnym (domyślnie, gdy nie jest używana konfiguracja debugowania)
+# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .

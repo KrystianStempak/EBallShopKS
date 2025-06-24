@@ -23,7 +23,8 @@ namespace User.Domain.Models.Entities
         [Required]
         public string PasswordHash { get; set; }
 
-        public ICollection<Role> Roles { get; set; }
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

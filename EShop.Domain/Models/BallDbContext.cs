@@ -5,21 +5,23 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EShop.Domain.Models
 {
+
     public class BallDbContext : DbContext
     {
+        public BallDbContext(DbContextOptions<BallDbContext> options)
+            : base(options)
+        {
+        }
+
         public DbSet<Ball> Balls { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        { 
+
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Name)
-                .IsUnique(); // To tworzy unikalny indeks
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            // Połączenie z bazą danych
-            options.UseSqlServer("Server=DESKTOP-S77TFGV;Database=MyDatabase;Trusted_Connection=True;TrustServerCertificate=True;");
+                .IsUnique();
         }
     }
 }
