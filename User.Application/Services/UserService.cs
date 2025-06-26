@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,6 +77,16 @@ namespace User.Application.Services
 
             _db.Users.Add(user);
             _db.SaveChanges();
+        }
+        public async Task<bool> DeleteUserAsync(int userId)
+        {
+            var user = await _db.Users.FindAsync(userId);
+            if (user == null)
+                return false;
+
+            _db.Users.Remove(user);
+            await _db.SaveChangesAsync();
+            return true;
         }
     }
 }

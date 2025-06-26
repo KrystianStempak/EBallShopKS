@@ -73,6 +73,10 @@ namespace EBallShop
                 builder.Services.AddScoped<IBallSeeder, BallSeeder>();
                 builder.Services.AddAutoMapper(typeof(BallMappingProfile).Assembly);
                 builder.Services.AddScoped<IBallService, BallService>();
+                builder.Services.AddHttpClient<IBallService, BallService>(client =>
+                {
+                    client.BaseAddress = new Uri("https://localhost:5002"); // lub https://localhost:5002 jeœli dzia³a HTTPS
+                });
 
                 builder.Services.AddAuthentication(options =>
                 {
@@ -82,7 +86,9 @@ namespace EBallShop
                 .AddJwtBearer(options =>
                 {
                     var rsa = RSA.Create();
-                    rsa.ImportFromPem(File.ReadAllText("../data/public.key"));
+                    var keyPath = Path.Combine("/app/data", "public.key");
+                    var key = File.ReadAllText(keyPath);
+                    rsa.ImportFromPem(key);
                     var publicKey = new RsaSecurityKey(rsa);
 
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -100,7 +106,7 @@ namespace EBallShop
                 builder.Services.AddAuthorization(options =>
                 {
                     options.AddPolicy("AdminOnly", policy =>
-                        policy.RequireRole("Administrator"));
+                        policy.RequireRole("Admin"));
                     options.AddPolicy("EmployeeOnly", policy =>
                         policy.RequireRole("Employee"));
                 });

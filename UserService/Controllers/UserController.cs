@@ -64,5 +64,18 @@ namespace UserService.Controllers
             _userService.EditUser(userId, dto);
             return Ok(new { message = "Profile updated successfully." });
         }
+
+        [HttpDelete("{id}")]
+        [Authorize(Policy = "AdminOnly")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var success = await _userService.DeleteUserAsync(id);
+            if (!success)
+            {
+                return NotFound($"User with id {id} not found.");
+            }
+
+            return NoContent();
+        }
     }
 }

@@ -33,7 +33,9 @@ namespace User.Application.Services
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.Key));
             var rsa = RSA.Create();
-            rsa.ImportFromPem(File.ReadAllText("../data/private.key")); // Załaduj klucz prywatny RSA
+            var keyPath = Path.Combine("/app/data", "private.key");
+            var key2 = File.ReadAllText(keyPath);
+            rsa.ImportFromPem(key2); 
             var creds = new SigningCredentials(new RsaSecurityKey(rsa), SecurityAlgorithms.RsaSha256);
             
             var token = new JwtSecurityToken(

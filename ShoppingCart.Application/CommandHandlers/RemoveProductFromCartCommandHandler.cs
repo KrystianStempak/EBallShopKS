@@ -21,7 +21,7 @@ namespace ShoppingCart.Application.CommandHandlers
 
         public Task Handle(RemoveProductFromCartCommand command, CancellationToken cancellationToken)
         {
-            _cartRemover.RemoveProductFromCart(command.CartId, command.ProductId);
+            _cartRemover.RemoveProductFromCart(command.CartId, command.BallId);
             return Task.CompletedTask;
         }
     }

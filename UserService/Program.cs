@@ -13,6 +13,8 @@ using User.Domain.Models.Entities;
 using User.Domain.Seeders;
 using EShop.Domain.Seeders;
 using EShop.Domain.Models;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Claims;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +32,9 @@ builder.Services.AddAuthentication(options =>
 .AddJwtBearer(options =>
 {
     var rsa = RSA.Create();
-    rsa.ImportFromPem(File.ReadAllText("/data/public.key"));// Za³aduj klucz publiczny RSA
+    var keyPath = Path.Combine("/app/data", "public.key");
+    var key = File.ReadAllText(keyPath);
+    rsa.ImportFromPem(key);// Za³aduj klucz publiczny RSA
     var publicKey = new RsaSecurityKey(rsa);
 
     var jwtConfig = jwtSettings.Get<JwtSettings>();
@@ -42,14 +46,16 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = jwtConfig.Issuer,
         ValidAudience = jwtConfig.Audience,
-        IssuerSigningKey = publicKey
+        IssuerSigningKey = publicKey,
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.NameIdentifier
     };
 });
 
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
-        policy.RequireRole("Administrator"));
+        policy.RequireRole("Admin"));
 });
 
 builder.Services.AddDbContext<UserDbContext>(options =>
@@ -118,6 +124,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 

@@ -10,6 +10,6 @@ namespace ShoppingCart.Domain.Command
     public class RemoveProductFromCartCommand : IRequest
     {
         public int CartId { get; set; }
-        public int ProductId { get; set; }
+        public int BallId { get; set; }
     }
 }

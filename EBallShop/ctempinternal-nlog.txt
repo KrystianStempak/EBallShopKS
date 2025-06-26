@@ -19,3 +19,101 @@
 2025-06-24 20:24:47.1298 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
 2025-06-24 20:24:47.1568 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
 2025-06-24 20:24:47.1843 Info Configuration initialized.
+2025-06-26 16:46:48.3163 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 16:46:48.5863 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 16:46:48.6118 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 16:46:48.6932 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 16:46:48.8557 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 16:46:49.0923 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 16:46:49.1721 Info Configuration initialized.
+2025-06-26 16:59:14.4585 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 16:59:14.6127 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 16:59:14.6334 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 16:59:14.6886 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 16:59:14.7310 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 16:59:14.7963 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 16:59:14.8793 Info Configuration initialized.
+2025-06-26 17:08:35.8137 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:08:36.0528 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:08:36.2173 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:08:36.2644 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:08:36.3307 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:08:36.4308 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:08:36.5498 Info Configuration initialized.
+2025-06-26 17:14:11.8431 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:14:11.9280 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:14:11.9460 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:14:11.9528 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:14:11.9703 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:14:12.0333 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:14:12.0771 Info Configuration initialized.
+2025-06-26 17:16:06.1375 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:16:06.2236 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:16:06.2307 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:16:06.2393 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:16:06.2778 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:16:06.3271 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:16:06.3663 Info Configuration initialized.
+2025-06-26 17:16:54.4302 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:16:54.5626 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:16:54.5827 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:16:54.6298 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:16:54.7331 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:16:54.7833 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:16:54.8276 Info Configuration initialized.
+2025-06-26 17:24:21.3584 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:24:21.4656 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:24:21.4805 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:24:21.5006 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:24:21.5414 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:24:21.5874 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:24:21.6300 Info Configuration initialized.
+2025-06-26 17:29:21.7726 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:29:21.8681 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:29:21.8771 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:29:21.8854 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:29:21.9157 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:29:21.9701 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:29:22.0299 Info Configuration initialized.
+2025-06-26 17:31:52.7870 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:31:52.8800 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:31:52.9010 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:31:52.9240 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:31:52.9719 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:31:53.0127 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:31:53.0500 Info Configuration initialized.
+2025-06-26 17:34:36.2367 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:34:36.3273 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:34:36.3917 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:34:36.4494 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:34:36.4751 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:34:36.5389 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:34:36.5799 Info Configuration initialized.
+2025-06-26 17:46:06.8736 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:46:06.9605 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:46:06.9752 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:46:07.0150 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:46:07.0358 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:46:07.0784 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:46:07.1439 Info Configuration initialized.
+2025-06-26 17:51:30.1311 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:51:30.2527 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:51:30.2671 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:51:30.4847 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:51:30.5362 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:51:30.6082 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:51:30.7092 Info Configuration initialized.
+2025-06-26 17:55:04.2124 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 17:55:04.2702 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 17:55:04.2758 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 17:55:04.2758 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 17:55:04.2907 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 17:55:04.3185 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 17:55:04.3650 Info Configuration initialized.
+2025-06-26 18:02:37.4952 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Unrecognized element 'extenions' from section 'NLog'
+2025-06-26 18:02:37.6832 Info Registered target NLog.Targets.FileTarget(Name=informations)
+2025-06-26 18:02:37.7042 Info Registered target NLog.Targets.FileTarget(Name=exceptions)
+2025-06-26 18:02:37.7355 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2025-06-26 18:02:37.9531 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.5.0.3962. Product version: 5.5.0+1873145cbc26e0312d9481234d69ce7dc68aac4e. GlobalAssemblyCache: False
+2025-06-26 18:02:38.1087 Info Validating config: TargetNames=allfile, exceptions, informations, ConfigItems=60, FilePath=/app/nlog.config
+2025-06-26 18:02:38.3124 Info Configuration initialized.

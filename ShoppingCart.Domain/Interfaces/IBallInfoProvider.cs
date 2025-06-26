@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ShoppingCart.Domain.Interfaces
 {
     public interface IBallInfoProvider
     {
-        EShop.Domain.Models.Ball? GetBallById(int ballId);
+        public Task<Ball?> GetBallByIdAsync(int ballId);
     }
 }

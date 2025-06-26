@@ -28,7 +28,7 @@ namespace ShoppingCart.Application.Services
 
         public void AddProductToCart(int cartId, ShoppingCart.Domain.Models.Ball ball)
         {
-            var externalBall = _ballInfoProvider.GetBallById(ball.BallId);
+            var externalBall = _ballInfoProvider.GetBallByIdAsync(ball.BallId);
 
             if (externalBall == null)
             {

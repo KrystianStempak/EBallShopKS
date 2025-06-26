@@ -2,7 +2,9 @@
 using EShop.Domain.Models;
 using EShop.Domain.ModelsDto;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Net.Http;
 
 namespace EShop.Application.Services
 {
@@ -11,9 +13,12 @@ namespace EShop.Application.Services
         private readonly BallDbContext _dbContext;
         private readonly IMapper _mapper;
         private readonly ILogger<BallService> _logger;
+        private readonly HttpClient _httpClient;
 
-        public BallService(BallDbContext dbContext, IMapper mapper, ILogger<BallService> logger)
+        public BallService(HttpClient httpClient, IConfiguration config, BallDbContext dbContext, IMapper mapper, ILogger<BallService> logger)
         {
+            _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri(config["BallService:BaseUrl"]);
             _dbContext = dbContext;
             _mapper = mapper;
             _logger = logger;
@@ -79,9 +84,16 @@ namespace EShop.Application.Services
             return ballsDtos;
         }
 
-        public int Create(CreateBallDto dto) 
+        public int Create(CreateBallDto dto)
         {
             var ball = _mapper.Map<Ball>(dto);
+
+            // Ustaw domyślną kategorię, jeśli nie jest podana
+            if (ball.CategoryId == 0)
+            {
+                ball.CategoryId = 1; // Id istniejącej kategorii domyślnej
+            }
+
             _dbContext.Balls.Add(ball);
             _dbContext.SaveChanges();
 

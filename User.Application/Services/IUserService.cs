@@ -9,5 +9,6 @@ namespace User.Application.Services
         public void RegisterUser(RegisterUserDTO dto);
         public void ResetPassword(ResetPasswordDTO dto);
         public void EditUser(int userId, EditUserDTO dto);
+        Task<bool> DeleteUserAsync(int userId);
     }
 }

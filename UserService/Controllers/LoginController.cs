@@ -34,7 +34,6 @@ namespace UserService.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         [Authorize(Policy = "AdminOnly")]
         public IActionResult AdminPage()
         {

@@ -1,4 +1,5 @@
 ﻿using ShoppingCart.Domain.Interfaces;
+using ShoppingCart.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +18,14 @@ namespace ShoppingCart.Domain.Queries
             _httpClient = httpClient;
         }
 
-        public EShop.Domain.Models.Ball? GetBallById(int ballId)
+        public async Task<Ball?> GetBallByIdAsync(int ballId)
         {
-            var response = _httpClient.GetAsync($"/api/balls/{ballId}").Result;
-
+            var response = await _httpClient.GetAsync($"/api/balls/{ballId}");
             if (!response.IsSuccessStatusCode)
                 return null;
 
-            var json = response.Content.ReadAsStringAsync().Result;
-            return JsonSerializer.Deserialize<EShop.Domain.Models.Ball>(json, new JsonSerializerOptions
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<Ball>(json, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });
