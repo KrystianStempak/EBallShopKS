@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using EShop.Application.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 
 namespace EBallShop
 {
@@ -129,10 +130,6 @@ namespace EBallShop
 
                 app.UseHttpsRedirection();
 
-
-
-
-
                 app.UseAuthentication();
                 app.UseAuthorization();
 
@@ -151,6 +148,7 @@ namespace EBallShop
             }
            
         }
+
 
     }
 }
